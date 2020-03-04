@@ -1,0 +1,46 @@
+module.exports = {
+  pluginOptions: {
+    prerenderSpa: {
+      registry: undefined,
+      renderRoutes: [
+        '/',
+        '/about',
+        '/alfrescoliving',
+        '/locations',
+        '/news',
+        '/products',
+        '/windows',
+        '/doors',
+        '/slidingdoor',
+        '/alfrescoslidingdoor',
+        '/bifolddoor',
+        '/frenchdoor',
+        '/slidingwindow',
+        '/awningwindow',
+        '/casementwindow',
+        '/doublehungwindow',
+        '/warranty',
+        '/wers',
+        '/brochures',
+        '/vic-act-brochures',
+        '/nsw-brochures',
+        '/qld-brochures',
+        '/sa-brochures',
+        '/wa-brochures',
+        '/tas-brochures',
+        '/dowell-thermaline',
+        '/thermaline-door',
+        '/thermaline-window',
+        '/thermaline-specs',
+        '/thermaline-awards',
+        '/thermaline-tech',
+        '/thermaline-energy',
+        '/thermaline-design',
+        '/thermaline-climate',
+      ],
+      useRenderEvent: true,
+      headless: true,
+      onlyProduction: true
+    }
+  }
+}

@@ -1,0 +1,373 @@
+/* Global Styles */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Global Colors */
+
+.blue {
+    color: rgb(0, 96, 175);
+}
+
+.white {
+    color: white;
+}
+
+.black {
+    color: black;
+}
+
+/* Navbar CSS */
+
+#nav {
+    background-color: white;
+}
+
+.change {
+    transition: 0.3s;
+    color: black;
+}
+
+.change:hover {
+    background-color: #0060AF;
+    color: white;
+}
+
+.dropdown:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    min-width: 200px;
+}
+
+.dropdown-menu.columns-2 {
+    min-width: 400px;
+}
+
+.dropdown-menu.columns-3 {
+    min-width: 500px;
+}
+
+.multi-column-dropdown {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+@media (max-width: 767px) {
+    .dropdown-menu.multi-column {
+        min-width: 240px !important;
+        overflow-x: hidden;
+    }
+}
+
+/* Footer CSS */
+/*footer*/
+.col_white_amrc {
+    color: black;
+}
+
+footer {
+    width: 100%;
+    background-color: #EBEBEB;
+    min-height: 250px;
+    padding: 10px 0px 25px 0px;
+}
+
+.pt2 {
+    padding-top: 40px;
+    margin-bottom: 20px;
+}
+
+footer p {
+    font-size: 13px;
+    color: black;
+    padding-bottom: 0px;
+    margin-bottom: 8px;
+}
+
+.mb10 {
+    padding-bottom: 15px;
+}
+
+.footer_ul_amrc {
+    margin: 0px;
+    list-style-type: none;
+    font-size: 14px;
+    padding: 0px 0px 10px 0px;
+}
+
+.footer_ul_amrc li {
+    padding: 0px 0px 5px 0px;
+}
+
+.footer_ul_amrc li a {
+    color: black;
+}
+
+.footer_ul_amrc li a:hover {
+    color: #0060AF;
+    text-decoration: none;
+}
+
+.fleft {
+    float: left;
+}
+
+.padding-right {
+    padding-right: 10px;
+}
+
+.footer_ul2_amrc {
+    margin: 0px;
+    list-style-type: none;
+    padding: 0px;
+}
+
+.footer_ul2_amrc li p {
+    display: table;
+}
+
+.footer_ul2_amrc li a:hover {
+    text-decoration: none;
+}
+
+.footer_ul2_amrc li i {
+    margin-top: 5px;
+}
+
+.bottom_border {
+    border-bottom: 1px solid #323f45;
+    padding-bottom: 20px;
+}
+
+/* Home Page Style */
+
+.carousel {
+    margin-bottom: 4rem;
+}
+
+.carousel-caption {
+    z-index: 10;
+    bottom: 3rem;
+}
+
+.carousel-item {
+    height: 32rem;
+    background-color: #777;
+}
+
+.carousel-item>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 32rem;
+}
+
+.therma {
+    background-color: rgba(118, 125, 120, 0.8);
+    padding: 20px;
+}
+
+.accent {
+    font-style: italic;
+}
+
+.underl {
+    text-decoration: underline;
+}
+
+.btn {
+    background-color: rgb(0, 96, 175);
+    color: white;
+}
+
+.first {
+    color: black;
+}
+
+.info {
+    text-align: center;
+}
+
+.caption {
+    position: absolute;
+    top: 78%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(118, 125, 120, 0.7);
+    padding-top: 5px;
+    color: black;
+}
+
+#window-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+#window-image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform .4s;
+}
+
+.window-text {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#window-container:hover #window-image {
+    transform: scale(1.3);
+    transform-origin: 50% 50%;
+}
+
+#door-container {
+    position: relative;
+    width: 100%;
+}
+
+#door-image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+#door-container:hover #door-image {
+    opacity: 0.3;
+}
+
+/* Thermaline Styles */
+
+.p-therma {
+    font-size: 15px;
+    text-align: justify;
+}
+
+.italic {
+    font-style: italic;
+    text-align: right;
+    color: rgb(145, 176, 174);
+}
+
+.thick {
+    font-weight: 700;
+}
+
+.mini-heading {
+    font-weight: 700;
+}
+
+.h1-therma {
+    font-size: 30px;
+}
+
+/* Alfresco Living Styles */
+
+.p-alfresco {
+    font-size: 13px;
+    text-align: justify;
+}
+
+.h1-alfresco {
+    font-size: 28px;
+}
+
+/* About Us Styles */
+
+.about {
+    margin-top: 80px;
+}
+
+/* News Styles */
+.p-news {
+    font-size: 14px;
+    text-align: justify;
+}
+
+/* Product Range CSS */
+.caption {
+    position: absolute;
+    top: 78%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    /* background-color: rgba(0, 136, 203, 0.7); */
+    background-color: rgba(118, 125, 120, 0.7);
+    padding-top: 5px;
+    color: white;
+}
+
+#window-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+#window-image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform .4s;
+}
+
+.window-text {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#window-container:hover #window-image {
+    transform: scale(1.3);
+    transform-origin: 50% 50%;
+}
+
+#door-container {
+    position: relative;
+    width: 100%;
+}
+
+#door-image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+#door-container:hover #door-image {
+    opacity: 0.3;
+}
+
+/* Warranty and Care */
+.h1-warr {
+    font-size: 30px;
+}
+
+/*Specific Products CSS */
+.p-prod {
+    font-size: 15px;
+    text-align: justify;
+}
+
