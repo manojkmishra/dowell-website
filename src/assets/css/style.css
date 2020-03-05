@@ -22,7 +22,10 @@
 #nav {
     background-color: white;
 }
-
+.navbar-collapse li{
+ 
+    font-size: .95rem !important;
+}
 .change {
     transition: 0.3s;
     color: black;
