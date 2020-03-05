@@ -4,13 +4,13 @@
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
-        <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li> 
         <li data-target="#myCarousel" data-slide-to="4"></li>
-        <li data-target="#myCarousel" data-slide-to="5"></li>
-        <li data-target="#myCarousel" data-slide-to="6"></li>
+     <li data-target="#myCarousel" data-slide-to="5"></li>
+      <!--  <li data-target="#myCarousel" data-slide-to="6"></li>
         <li data-target="#myCarousel" data-slide-to="7"></li>
         <li data-target="#myCarousel" data-slide-to="8"></li>
-        <li data-target="#myCarousel" data-slide-to="9"></li>
+        <li data-target="#myCarousel" data-slide-to="9"></li> -->
     </ol>
     <div class="carousel-inner" role="listbox">
         <div class="carousel-item active">
@@ -39,7 +39,7 @@
                 </div>
             </div>
         </div>
-        <div class="carousel-item">
+     <!--   <div class="carousel-item">
             <img class="third-slide" src="../../assets/images/Carousel/slide3.jpg" alt="Dowell Windows and Doors">
             <div class="container">
                 <div class="carousel-caption text-left">
@@ -53,7 +53,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="carousel-item">
             <img class="third-slide" src="../../assets/images/Carousel/slide4.jpg" alt="Dowell Windows and Doors">
             <div class="container">
@@ -70,7 +70,7 @@
                 </div>
             </div>
         </div>
-        <div class="carousel-item">
+      <!--  <div class="carousel-item">
             <img class="third-slide" src="../../assets/images/Carousel/slide5.jpg" alt="Dowell Windows and Doors">
             <div class="container">
                 <div class="carousel-caption text-left">
@@ -81,7 +81,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="carousel-item">
             <img class="third-slide" src="../../assets/images/Carousel/slide6.jpg" alt="Dowell Windows and Doors">
@@ -95,7 +95,7 @@
             <img class="third-slide" src="../../assets/images/Carousel/slide8.jpg" alt="Dowell Windows and Doors">
         </div>
 
-        <div class="carousel-item">
+     <!--   <div class="carousel-item">
             <img class="third-slide" src="../../assets/images/Carousel/slide9.jpg" alt="Dowell Windows and Doors">
             <div class="container">
                 <div class="carousel-caption text-left">
@@ -112,7 +112,7 @@
 
         <div class="carousel-item">
             <img class="third-slide" src="../../assets/images/Carousel/slide10.jpg" alt="Dowell Windows and Doors">
-        </div>
+        </div> -->
     </div>
     <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>

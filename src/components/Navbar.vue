@@ -160,9 +160,9 @@
                     <li class="nav-item">
                         <router-link class="change nav-link" to="/locations">Locations</router-link>
                     </li>
-                    <li class="nav-item">
+                 <!--   <li class="nav-item">
                         <router-link class="change nav-link" to="/dowell-latest-news">News</router-link>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>

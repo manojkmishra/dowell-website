@@ -60,12 +60,12 @@ export default new Router({
         import("./views/Locations.vue")
     },
     //News
-    {
+   /* {
       path: "/dowell-latest-news",
       name: "news",
       component: () =>
         import("./views/News.vue")
-    },
+    },*/
 
 
     //--------------------------------//

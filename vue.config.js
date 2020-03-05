@@ -7,7 +7,7 @@ module.exports = {
         '/about',
         '/alfrescoliving',
         '/locations',
-        '/news',
+        //'/news',
         '/products',
         '/windows',
         '/doors',
