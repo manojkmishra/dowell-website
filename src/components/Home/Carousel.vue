@@ -7,13 +7,16 @@
       <li data-target="#myCarousel" data-slide-to="3"></li> 
         <li data-target="#myCarousel" data-slide-to="4"></li>
      <li data-target="#myCarousel" data-slide-to="5"></li>
-      <!--  <li data-target="#myCarousel" data-slide-to="6"></li>
-        <li data-target="#myCarousel" data-slide-to="7"></li>
+      <li data-target="#myCarousel" data-slide-to="6"></li>
+     <!--     <li data-target="#myCarousel" data-slide-to="7"></li>
         <li data-target="#myCarousel" data-slide-to="8"></li>
         <li data-target="#myCarousel" data-slide-to="9"></li> -->
     </ol>
     <div class="carousel-inner" role="listbox">
         <div class="carousel-item active">
+            <img class="third-slide" src="../../assets/images/Carousel/160yrbanner.jpg" alt="Dowell Windows and Doors">
+        </div>
+        <div class="carousel-item ">
             <img class="third-slide" src="../../assets/images/Carousel/slide1.jpg" alt="Dowell Windows and Doors">
             <div class="container">
                 <div class="carousel-caption text-left">
@@ -88,15 +91,17 @@
         </div>
 
         <div class="carousel-item">
-            <img class="third-slide" src="../../assets/images/Carousel/slide7.jpg" alt="Dowell Windows and Doors">
+            <img class="third-slide" src="../../assets/images/Carousel/beresfield.jpg" alt="Dowell Windows and Doors">
         </div>
 
         <div class="carousel-item">
-            <img class="third-slide" src="../../assets/images/Carousel/slide8.jpg" alt="Dowell Windows and Doors">
+            <img class="third-slide" src="../../assets/images/Carousel/geebung.jpg" alt="Dowell Windows and Doors">
         </div>
 
+
+
      <!--   <div class="carousel-item">
-            <img class="third-slide" src="../../assets/images/Carousel/slide9.jpg" alt="Dowell Windows and Doors">
+            <img class="third-slide" src="../../assets/images/Carousel/slickers.jpg" alt="Dowell Windows and Doors">
             <div class="container">
                 <div class="carousel-caption text-left">
                     <div class="animated fadeInRight slow therma col-xl-4 col-md-4">
@@ -130,4 +135,13 @@ export default {
     name: "carousel",
 }
 </script>
+<style scoped>
+@media(min-width:768px) {
+    .third-slide{
+    margin: 0 auto;
+    width:150%;
+    padding-top:50px;
+    }
+}
+</style>
 
