@@ -1,5 +1,5 @@
 <template>
-<div class="tab-pane active" id="vic">
+<div class="tab-pane" id="vic">
     <div class="row">
 
         <div class="col-xl-4 col-md-6 col-s-12">
@@ -277,8 +277,18 @@ export default {
 </script>
 
 <style scoped>
-.email {
-    text-decoration: none;
-    color: black;
+.email {   
+    color:#0060af;
+    font-size: 14px;
+}
+.email:hover {
+color: rgb(124, 124, 196);
+ text-decoration: underline;
+}
+.table-borderless{
+    font-size:15px;
+        border-collapse: separate;
+    margin-bottom: 25px;
+    width: 100%;
 }
 </style>

@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'animate.css'
 import 'animate.css/animate.min.css'
 import './assets/css/style.css'
+import 'leaflet/dist/leaflet.css'
 import VueHead from 'vue-head'
 
 Vue.use(VueHead)
