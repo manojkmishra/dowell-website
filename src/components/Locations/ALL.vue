@@ -2,7 +2,7 @@
 <div class="tab-pane active" id="all">
     <div class="row ml-1 state"><h3>Victoria</h3></div>
     <div class="row">
-        <div class="col-xl-3 col-md-6 col-s-12 offset-xl-3 animated fadeInRight" :key="index" v-for="(brew,index) in vic">
+        <div class="col-xl-3 col-md-6 col-s-12 offset-xl-1 animated fadeInRight" :key="index" v-for="(brew,index) in vic">
             <div class="table-responsive">                 
                 <table class="table-borderless">                 
                     <thead class="officename"><tr><th>{{brew.name}}</th></tr></thead>
@@ -21,7 +21,7 @@
     </div>
     <div class="row ml-1 mt-2 state"><h3>Queensland</h3></div>
     <div class="row">
-        <div class="col-xl-3 col-md-6 col-s-12 offset-xl-3 animated fadeInRight" :key="index" v-for="(brew,index) in qld">
+        <div class="col-xl-3 col-md-6 col-s-12 offset-xl-1 animated fadeInRight" :key="index" v-for="(brew,index) in qld">
             <div class="table-responsive">                 
                 <table class="table-borderless">                 
                     <thead><tr><th>{{brew.name}}</th></tr></thead>
@@ -40,7 +40,7 @@
     </div>
     <div class="row ml-1 state"><h3>New South Wales</h3></div>
     <div class="row ">
-        <div class="col-xl-3 col-md-6 col-s-12 offset-xl-3 animated fadeInRight " :key="index" v-for="(brew,index) in nsw">
+        <div class="col-xl-3 col-md-6 col-s-12 offset-xl-1 animated fadeInRight " :key="index" v-for="(brew,index) in nsw">
             <div class="table-responsive ">                 
                 <table class="table-borderless">                 
                     <thead class="officename pt-10"><tr><th>{{brew.name}}</th></tr></thead>
@@ -59,7 +59,7 @@
     </div>
          <div class="row ml-1 state"><h3>Tasmania</h3></div>
     <div class="row ">
-        <div class="col-xl-3 col-md-6 col-s-12 offset-xl-3 animated fadeInRight " :key="index" v-for="(brew,index) in tas">
+        <div class="col-xl-3 col-md-6 col-s-12 offset-xl-1 animated fadeInRight " :key="index" v-for="(brew,index) in tas">
             <div class="table-responsive ">                 
                 <table class="table-borderless">                 
                     <thead class="officename pt-10"><tr><th>{{brew.name}}</th></tr></thead>
@@ -78,7 +78,7 @@
     </div>
      <div class="row ml-1 state"><h3>Australian Capital Territory</h3></div>
     <div class="row ">
-        <div class="col-xl-3 col-md-6 col-s-12 offset-xl-3 animated fadeInRight " :key="index" v-for="(brew,index) in act">
+        <div class="col-xl-3 col-md-6 col-s-12 offset-xl-1 animated fadeInRight " :key="index" v-for="(brew,index) in act">
             <div class="table-responsive ">                 
                 <table class="table-borderless">                 
                     <thead class="officename pt-10"><tr><th>{{brew.name}}</th></tr></thead>
@@ -97,7 +97,7 @@
     </div>
          <div class="row ml-1 state"><h3>South Australia</h3></div>
     <div class="row ">
-        <div class="col-xl-3 col-md-6 col-s-12 offset-xl-3 animated fadeInRight" :key="index" v-for="(brew,index) in sa">
+        <div class="col-xl-3 col-md-6 col-s-12 offset-xl-1 animated fadeInRight" :key="index" v-for="(brew,index) in sa">
             <div class="table-responsive ">                 
                 <table class="table-borderless">                 
                     <thead class="officename"><tr><th>{{brew.name}}</th></tr></thead>
@@ -116,7 +116,7 @@
     </div>
              <div class="row ml-1 state"><h3>Western Australia</h3></div>
     <div class="row ">
-        <div class="col-xl-3 col-md-6 col-s-12 offset-xl-3 animated fadeInRight " :key="index" v-for="(brew,index) in wa">
+        <div class="col-xl-3 col-md-6 col-s-12 offset-xl-1 animated fadeInRight " :key="index" v-for="(brew,index) in wa">
             <div class="table-responsive ">                 
                 <table class="table-borderless">                 
                     <thead class="officename pt-10"><tr><th>{{brew.name}}</th></tr></thead>

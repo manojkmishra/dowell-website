@@ -1,6 +1,6 @@
 <template>
 <div class="about container animated fadeIn">
-
+<h1 class="blue animated fadeInLeft text-center">Our Locations</h1>
    <div class="row map">
             <l-map :zoom="zoom" :center="center">
       <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
@@ -8,7 +8,7 @@
                 :lat-lng="latLng(brew.latitude,brew.longitude)"
                 >
  
-            <l-popup>{{brew.name}}<br> {{brew.street}},{{brew.suburb}}
+            <l-popup ><div class="font-weight-bold"> Dowell Windows – {{brew.name}}</div>{{brew.street}},{{brew.suburb}}
                   <br> {{brew.state}}, {{brew.postal_code}} <br>
                       Phone: {{brew.phone}}, Fax: {{brew.fax}}<br>
                       Email: <a class="email" v-bind:href="mailto(brew.email)">{{brew.email}}@dowell.com.au</a>
@@ -85,9 +85,9 @@ export default {
                 title: 'Locations'
             },
             email: "mailto:vic.enquiries@dowell.com.au",
-            zoom:4.5,
+            zoom:4,
             //center:  L.latLng(-23.698042,133.880753), //map center on page center-alice springs
-             center:  L.latLng(-31.0290176,134.4051977), //map center on page center-alice springs
+             center:  L.latLng(-28.1411207,135.5331245), //map center on page center-alice springs
             url:'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
             attribution:'&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
            // marker: L.latLng(-33.8688, 151.2093), //marker location

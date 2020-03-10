@@ -138,8 +138,7 @@ export default {
 <style scoped>
 @media(min-width:768px) {
     .third-slide{
-    margin: 0 auto;
-    width:150%;
+    margin: 0 auto;   
     padding-top:50px;
     }
 }
