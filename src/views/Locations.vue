@@ -78,22 +78,7 @@ Icon.Default.mergeOptions({
 export default {
     name: "home",
     components: { ALL,VIC, TAS,  WA,  NSW, ACT, QLD, SA ,LMap, LTileLayer, LMarker, LPopup, LIcon},
-      mounted:function(){   navigator.geolocation.getCurrentPosition((position)=> 
-                        {   
-                            console.log('componentDidMount-state',position)
-                        },
-                      ()=>{console.log('loc access not provided')
-                            fetch('https://ipapi.co/json')
-                            .then(res=>res.json())
-                            .then(location=>{console.log('ipapi-loc=',location)
-                                              this.setState({location:{lat:location.latitude,
-                                                              lng:location.longitude},
-                                                              haveUsersLocation: true, zoom: 13
-                                                          })
-                                            })
-                          }
-                            ); 
-                    },
+     
     data: function () {
         return {
             infoPage: {
