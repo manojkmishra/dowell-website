@@ -147,7 +147,7 @@ export default {
 </script>
 
 <style scoped>
-.map{height:70vh}
+.map{height:70vh; margin: 0 auto;   }
 .nav-text { font-size: 14px;}
 .grey { background-color: #EBEBEB;}
 .black { color: black;}
