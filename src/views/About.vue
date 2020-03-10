@@ -1,6 +1,6 @@
 <template>
 <div class="about container">
-  <h1 class="story blue animated fadeInLeft">About Dowell</h1>
+<!--  <h1 class="story blue animated fadeInLeft">About Dowell</h1>
     <div class="row">
         <div class="animated fadeInLeft col-lg-6 col-md-12 col-sm-12 col-xs-12">
             <img id="window-image" class="card-img-top" src="../assets/images/News/about.jpg" alt="Dowell Windows and Doors">
@@ -16,8 +16,8 @@
                 </span>
             </div>
         </div>
-    </div> 
-        <h1 class="story blue animated fadeInLeft">Story of Dowell - a company history</h1>
+    </div> -->
+        <h1 class="story blue animated fadeInLeft text-center">Story of Dowell - a company history</h1>
         <div class="row">
             <div class="animated fadeInLeft col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <img id="window-image1" src="../assets/images/About/Page-2-Image-2.png" alt="Dowell Windows and Doors">
@@ -27,6 +27,11 @@
         <div class="row">
         <div class="animated fadeInLeft col-lg-6 col-md-12 col-sm-12 col-xs-12">
             <div class="text-justify left-side">
+                <span>
+                    Dowell has been involved in the fabrication and supply of windows and doors to the Australian residential housing market since 1860 and is now a leading supplier of aluminium windows and doors to the Australian housing market. Dowell is proud to be a privately owned Australian company with 9 manufacturing locations across Australia, employing over 600 people. Dowell has a strong reputation for product quality and service and strives to continually evolve and innovate our product range to meet our customer needs, designing products to suit Australian lifestyles and climatic conditions.
+                </span>
+                <br>
+                <br>
                 <span >In the cut and thrust of the building industry, as well as in the Australian 
                     business world more generally, it’s unusual for a company name and ethos to 
                     remain unchanged, but such is the story of Dowell. Tracking through a history 
@@ -200,7 +205,7 @@ margin-bottom:20px;}
     display: block;
     width: 100%;
     
-    height: 90%;
+    height: 95%;
     margin: 0 auto;
     transition: transform .4s;
 }
