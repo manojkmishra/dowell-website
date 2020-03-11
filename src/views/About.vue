@@ -28,7 +28,7 @@
         <div class="animated fadeInLeft col-lg-6 col-md-12 col-sm-12 col-xs-12">
             <div class="text-justify left-side">
                 <span>
-                    Dowell has been involved in the fabrication and supply of windows and doors to the Australian residential housing market since 1860 and is now a leading supplier of aluminium windows and doors to the Australian housing market. Dowell is proud to be a privately owned Australian company with 9 manufacturing locations across Australia, employing over 600 people. Dowell has a strong reputation for product quality and service and strives to continually evolve and innovate our product range to meet our customer needs, designing products to suit Australian lifestyles and climatic conditions.
+                    <span class="dowell">Dowell</span> has been involved in the fabrication and supply of windows and doors to the Australian residential housing market since 1860 and is now a leading supplier of aluminium windows and doors to the Australian housing market. Dowell is proud to be a privately owned Australian company with 9 manufacturing locations across Australia, employing over 600 people. Dowell has a strong reputation for product quality and service and strives to continually evolve and innovate our product range to meet our customer needs, designing products to suit Australian lifestyles and climatic conditions.
                 </span>
                 <br>
                 <br>
@@ -186,19 +186,21 @@ export default {
 }
 </script>
 <style scoped>
+.dowell{font-weight:bold;
+font-size:1.6rem;}
 .story{  
     margin-top: 30px;
     margin-bottom: 20px;
 }
 .year{
-    font-size:27px;
+    font-size:1.5rem;
     margin-right:7px;
     font-weight:bold;    
 }
 .year1{
     margin-bottom:15px;
 }
-.left-side{font-size:1.5rem;
+.left-side{
 margin-bottom:20px;}
 #window-image1 {
     opacity: 1;
