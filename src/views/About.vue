@@ -84,17 +84,23 @@
                 </span>
             </div>
             <hr>
-                        <div class="row">
+             <div class="row">
                 <span class="animated fadeInLeft col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <img id="window-image3"  src="../assets/images/About/Page-4-Image-18.png" alt="Dowell Windows and Doors">
                     
                 </span>
                 <span class="animated fadeInLeft col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <img id="window-image3"  src="../assets/images/About/Page-4-Image-19.png" alt="Dowell Windows and Doors">
-                  
                 </span>
             </div>
             <hr>
+             <div class="row">
+                <span class="animated fadeInLeft col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <img id="window-image3"  src="../assets/images/About/Page-6-Image-23.png" alt="Dowell Windows and Doors">
+                    
+                </span>
+               
+            </div>
         </div>
         <div class="animated fadeInRight col-lg-6 col-md-12 col-sm-12 col-xs-12">
             <div class="text-justify">
