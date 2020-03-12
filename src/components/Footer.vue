@@ -17,8 +17,13 @@
                         <li>
                             <router-link to="/doors">Doors</router-link>
                         </li>
-                        <li>
-                            <router-link to="/locations">Contact Us</router-link>
+                        <li >
+                         
+                           <!-- <router-link to="/locations"> -->
+                            <a href="#" data-toggle="modal" data-target=".bannerformmodal">Contact Us</a>
+                           <!-- </router-link> -->
+                                
+                               
                         </li>
                     </ul>
                     <!--footer_ul_amrc ends here-->
@@ -45,9 +50,17 @@
         </div>
 
         <div class="container">
-            <p class="text-center">&copy; Copyright 2019 Dowell Windows Pty Ltd</p>
+            <p class="text-center">&copy; Copyright 2020 Dowell Windows Pty Ltd</p>
         </div>
-
+       
     </footer>
+    <contactus/>
 </div>
 </template>
+<script>
+import contactus from './Locations/ContactUsold'
+export default {
+    components:{contactus}
+    
+}
+</script>

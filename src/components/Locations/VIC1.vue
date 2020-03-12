@@ -1,5 +1,5 @@
 <template>
-<div class="tab-pane" id="vic">
+<div class="tab-pane active" id="vic">
     <div class="row">
 
         <div class="col-xl-4 col-md-6 col-s-12">

@@ -7,13 +7,24 @@
         <l-marker :key="index" v-for="(brew,index) in brews"
                 :lat-lng="latLng(brew.latitude,brew.longitude)"
                 >
- 
-            <l-popup ><div class="font-weight-bold"> Dowell Windows – {{brew.name}}</div>{{brew.street}},{{brew.suburb}}
-                  <br> {{brew.state}}, {{brew.postal_code}} <br>
-                      Phone: {{brew.phone}}, Fax: {{brew.fax}}<br>
-                      Email: <a class="email" v-bind:href="mailto(brew.email)">{{brew.email}}@dowell.com.au</a>
+                <div v-if="brew.type=='hoffice'">
+                    <l-icon :icon-url="icon" ></l-icon>  
+                    <l-popup ><div class="font-weight-bold"> Dowell Windows – {{brew.name}}</div>{{brew.street}},{{brew.suburb}}
+                        <br> {{brew.state}}, {{brew.postal_code}} <br>
+                            Phone: {{brew.phone}}, Fax: {{brew.fax}}<br>
+                            Email: <a class="email" v-bind:href="mailto(brew.email)">{{brew.email}}@dowell.com.au</a>
 
-            </l-popup>
+                    </l-popup>
+              </div>
+              <div v-else>
+                   <l-icon :icon-url="icon1" ></l-icon>  
+                    <l-popup ><div class="font-weight-bold"> Dowell Windows – {{brew.name}}</div>{{brew.street}},{{brew.suburb}}
+                        <br> {{brew.state}}, {{brew.postal_code}} <br>
+                            Phone: {{brew.phone}}, Fax: {{brew.fax}}<br>
+                            Email: <a class="email" v-bind:href="mailto(brew.email)">{{brew.email}}@dowell.com.au</a>
+
+                    </l-popup>
+              </div>
         </l-marker>
          
 
@@ -39,7 +50,6 @@
                     <div class="tab-content">
                         <TAS />
                         <VIC />
-                        
                         <WA />
                         <NSW />
                         <ACT />
@@ -67,6 +77,9 @@ import ACT from '../components/Locations/ACT'
 import QLD from '../components/Locations/QLD'
 import SA from '../components/Locations/SA'
 import { Icon } from 'leaflet';
+//import beer from '../../../assets/images/About/favicon.ico'
+import beer from '../assets/images/About/icons83.png'
+import beer1 from '../assets/images/About/icons82.png'
 
 delete Icon.Default.prototype._getIconUrl;
 Icon.Default.mergeOptions({
@@ -86,8 +99,10 @@ export default {
             },
             email: "mailto:vic.enquiries@dowell.com.au",
             zoom:4,
+            icon:beer,  icon1:beer1,
+            //iconSize:[200,200],
             //center:  L.latLng(-23.698042,133.880753), //map center on page center-alice springs
-             center:  L.latLng(-28.1411207,135.5331245), //map center on page center-alice springs
+            center:  L.latLng(-28.1411207,135.5331245), //map center on page center-alice springs
             url:'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
             attribution:'&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
            // marker: L.latLng(-33.8688, 151.2093), //marker location
@@ -115,7 +130,7 @@ export default {
 {"id":17,"name":"Head Office (Adelaide)","street":"17-21 Woomera Avenue","suburb":"Edinburgh Parks","state":"SA","postal_code":"5111","phone":"08 8282 4200","fax":"08 8287 6056","email":"sa.enquiries","type":"hoffice","longitude":"138.6447862","latitude":"-34.7412899"},
 {"id":18,"name":"Lonsdale","street":"Unit 10/4 Aldenhoven Road","suburb":"Lonsdale","state":"SA","postal_code":"5160","phone":"08 8326 6781","fax":"08 8384 6271","email":"sa.enquiries","type":"noffice","longitude":"138.4915246","latitude":"-35.1115657"},
 //act
-{"id":19,"name":"Queanbeyan ","street":"16 Barber Street","suburb":"Queanbeyan ","state":"TAS","postal_code":"7009","phone":"03 9721 0700","fax":"03 6228 2980","email":"act.enquiries","type":"hoffice","longitude":"149.2421935","latitude":"-35.3362651"},
+{"id":19,"name":"Queanbeyan ","street":"16 Barber Street","suburb":"Queanbeyan ","state":"TAS","postal_code":"7009","phone":"03 9721 0700","fax":"03 6228 2980","email":"act.enquiries","type":"noffice","longitude":"149.2421935","latitude":"-35.3362651"},
 
 ],
 
