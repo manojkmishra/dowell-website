@@ -38,19 +38,22 @@
                     <input  type="text" class="form-control" placeholder="Name"
                     v-model.trim="$v.formData.name.$model"
                     :class="{'is-invalid':$v.formData.name.$error,'is-valid':!$v.formData.name.$invalid}" />
+                   <!--  <span>{{$v.formData.name}}</span> -->
                     <div class="valid-feedback">Your name is valid</div>
                     <div class="invalid-feedback">
                         <span v-if="!$v.formData.name.required">Name is required.</span>
-                        <span v-if="!$v.formData.name.minLength">Name must have atleast{{$v.formData.name.$params.minLength.min}} letters.</span>
-                        <span v-if="!$v.formData.name.maxLength">Name must be less than{{$v.formData.name.$params.maxLength.max}} letters.</span>
+                        <span v-if="!$v.formData.name.minLength">Name must have atleast {{$v.formData.name.$params.minLength.min}} letters.</span>
+                        <span v-if="!$v.formData.name.maxLength">Name must be less than {{$v.formData.name.$params.maxLength.max}} letters.</span>
                     </div>
                 </div>
                 <div class="form-group"> 
-                    <input  type="text" class="form-control" placeholder="Email"
-                    v-model.trim="$v.formData.email.$model"  @change="$v.email.$touch()"
-                    :class="{'is-invalid':$v.formData.email.$error,'is-valid':!$v.formData.email.$invalid}" />
+                    <input  type="email"  class="form-control" placeholder="Email" v-model="formData.email"
+                        :status="$v.formData.email.$error ? 'error' : null"
+                        @blur="$v.formData.email.$touch()" 
+                         :class="{'is-invalid':$v.formData.email.$error,'is-valid':!$v.formData.email.$invalid}"/>
+                  <!--  <span>{{$v.formData.email}}</span> -->
                     <div class="valid-feedback">Your email is valid</div>
-                    <div class="invalid-feedback">
+                    <div class="invalid-feedback">                       
                         <span v-if="!$v.formData.email.required">Email is required.</span>
                         <span v-if="!$v.formData.email.email">Invalid Email.</span>                        
                     </div>
@@ -58,14 +61,15 @@
                
                 <div class="form-group"><input type="text" class="form-control" placeholder="Mobile" v-model="formData.mobile" /></div>
                 <div class="form-group"><input  type="text" class="form-control" placeholder="Company Name" v-model="formData.company" /></div>
-                <div class="controls"> <textarea name="comments" class="form-control" placeholder="Message (Max Length 100)" maxlength="100" v-model="formData.message" ></textarea>
+                <div class="controls"> <textarea name="comments" class="form-control" placeholder="Message (Max Length 100)" maxlength="100" v-model="formData.message" 
+                  ></textarea>
                 </div>
            </form>
         </div>       
      
       
             <vue-recaptcha class="captch" @verify="markRecaptchaAsVerified"
-                    sitekey="6LeAn-AUAAAAALGWQ76zWJs6L459veVQCARfvl5v"></vue-recaptcha>
+                    sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></vue-recaptcha>
                      </div>
                     </div>
      </div>
@@ -108,24 +112,41 @@ export default {
         }
       
     },
-      methods: {
-    markRecaptchaAsVerified(response) 
-    {   this.formData.pleaseTickRecaptchaMessage = '';
-        this.formData.recaptchaVerified = true;
-        console.log('markRecaptchaAsVerified--res,lgfm',response,this.formData)
+      methods: 
+      {
+                markRecaptchaAsVerified(response) 
+                {   this.formData.pleaseTickRecaptchaMessage = '';
+                    this.formData.recaptchaVerified = true;
+                    console.log('markRecaptchaAsVerified--res,lgfm',response,this.formData)
+                },
+                checkIfRecaptchaVerified() 
+                {    this.$v.formData.$touch();
+                    console.log('validation ', this.$v.formData); 
+                    if(this.$v.formData.name.$invalid || this.$v.formData.email.$invalid)
+                    {
+                        console.log('not validated'); 
+                        this.formData.pleaseTickRecaptchaMessage = 'Please fill the form.';
+                        return;
+                    }
+                    else{ console.log('validated-check captcha');  
+                            if (!this.formData.recaptchaVerified) 
+                            {   this.formData.pleaseTickRecaptchaMessage = 'Please tick recaptcha.';
+                                console.log('checkIfRecaptchaVerified-not verified, lgnform',this.formData)
+                                return true; // prevent form from submitting
+                            }
+                            console.log('all ok',this.formData)
+                        }
+                         //alert('form would be posted!');
+                         //close the form
+                         // this.resetFormData();
+                    
+                },
+
+        resetFormData() {  this.formData = { recaptchaVerified: false,  pleaseTickRecaptchaMessage: '',  comment: ''  }; }
     },
-    checkIfRecaptchaVerified() 
-    {  if (!this.formData.recaptchaVerified) 
-        {   this.formData.pleaseTickRecaptchaMessage = 'Please tick recaptcha.';
-            console.log('checkIfRecaptchaVerified-not verified, lgnform',this.formData)
-            return true; // prevent form from submitting
-        }
-        console.log('checkIfRecaptchaVerified, lgnform-verified',this.formData)
-        alert('form would be posted!');
-        this.resetFormData();
-    },
-    resetFormData() {  this.formData = { recaptchaVerified: false,  pleaseTickRecaptchaMessage: '',  comment: ''  }; }
-  }
+   
+
+ // }
 }
 </script>
 <style scoped>
