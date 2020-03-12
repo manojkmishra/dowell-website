@@ -65,7 +65,7 @@
      
       
             <vue-recaptcha class="captch" @verify="markRecaptchaAsVerified"
-                    sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></vue-recaptcha>
+                    sitekey="6LeAn-AUAAAAALGWQ76zWJs6L459veVQCARfvl5v"></vue-recaptcha>
                      </div>
                     </div>
      </div>
