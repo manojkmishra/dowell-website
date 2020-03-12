@@ -8,7 +8,9 @@ import 'animate.css/animate.min.css'
 import './assets/css/style.css'
 import 'leaflet/dist/leaflet.css'
 import VueHead from 'vue-head'
+import Vuelidate from 'vuelidate'
 
+Vue.use(Vuelidate)
 Vue.use(VueHead)
 
 Vue.config.productionTip = false

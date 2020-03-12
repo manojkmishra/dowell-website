@@ -1,20 +1,18 @@
 <template>
-    <div class="modal fade bannerformmodal" tabindex="-1" role="dialog" aria-labelledby="bannerformmodal" aria-hidden="true" id="bannerformmodal">
+<div class="modal fade bannerformmodal" tabindex="-1" role="dialog" aria-labelledby="bannerformmodal" aria-hidden="true" id="bannerformmodal">
 <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-content">
-                <div class="modal-header">
-                <img src="../../assets/images/About/dowell.png" alt="Dowell Windows and Doors">
-                <h3 class="modal-title" id="myModalLabel">Enquiry Form</h3>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
+    <div class="modal-content">
+        <div class="modal-header">
+            <img src="../../assets/images/About/dowell.png" alt="Dowell Windows and Doors">
+            <h3 class="modal-title" id="myModalLabel">Enquiry Form</h3>
+        </div>
+    <div class="modal-body">
+        <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 states">
             <div class="card border-0 ">
-                <h6 class="text-center">Please select your state</h6>
+               <!-- <h6 class="text-center">Please select your state</h6> -->
                 <div class="grey card-header p-2 border-0 rounded-0 ">
                     <ul class="nav nav-pills ">
-                      <!--  <li class="nav-text nav-item"><a class="nav-link black rounded-0 active" href="#all" data-toggle="tab">ALL</a></li> -->
                         <li class="nav-text nav-item"><a class="nav-link black rounded-0 active" href="#vic" data-toggle="tab">VIC</a></li>
                         <li class="nav-text nav-item"><a class="nav-link black rounded-0" href="#qld" data-toggle="tab">QLD</a></li>
                         <li class="nav-text nav-item"><a class="nav-link black rounded-0" href="#nsw" data-toggle="tab">NSW</a></li>
@@ -27,69 +25,58 @@
                 <div class="card-body">
                     <div class="tab-content">
                         <TAS/><VIC/><WA/><NSW/><ACT /><QLD /><SA /><TAS />
-                         <!-- <ALL/>-->
                     </div>
                 </div>
             </div>
-            </div>
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <form id="requestacallform" class="fform" name="requestacallform" >
-                    <div class="form-group">
-                                    <div class="input-group"> 
-                                    <input id="first_name" type="text" class="form-control" placeholder="Name" name="first_name"/>
-                                    </div>
-                              </div>
-                                <div class="form-group">
-                                    <div class="input-group">                               
-
-                                    <input id="email1" type="text" class="form-control" placeholder="Email" name="email1" onchange="validateEmailAdd();"/>
-                                    </div>
-                              </div>
-                              <div class="form-group">
-                                    <div class="input-group">                               
-
-                                    <input id="company_name_c" type="text" class="form-control" placeholder="Company Name" name="company_name_c"/>
-                                    </div>
-                              </div>
-                                <div class="form-group">
-                                    <div class="input-group">                               
-
-                                    <input id="phone_mobile" type="text" class="form-control" placeholder="Mobile" name="phone_mobile"/>
-                                    </div>
-                              </div>
-                      <!--      <div class="form-group">
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-building-o"></i></span>
-                                        <select class="form-control selectpicker" name="monthly_rental">
-                                            <option>Select</option>
-                                            <option>10-50</option>
-                                            <option>50-100</option>
-                                            <option>100-200</option>
-                                            <option>200-500</option>
-                                            <option>500+</option>
-                                        </select>
-                                    </div>
-                            </div>  -->
-                                <div class="control-group">
-                                    <div class="controls">                     
-                                               <textarea name="comments" class="form-control" placeholder="Message" maxlength="50" ></textarea>
-                                    </div>
-                                </div>
-
-                            </form>
-            </div></div>
-                  </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card border-0">
+                <h6 class="card-header text-center"> Please select your state above</h6>
+                <div class="card-body">
+            <form class="fform">
+                <div class="form-group"> 
+                    <input  type="text" class="form-control" placeholder="Name"
+                    v-model.trim="$v.formData.name.$model"
+                    :class="{'is-invalid':$v.formData.name.$error,'is-valid':!$v.formData.name.$invalid}" />
+                    <div class="valid-feedback">Your name is valid</div>
+                    <div class="invalid-feedback">
+                        <span v-if="!$v.formData.name.required">Name is required.</span>
+                        <span v-if="!$v.formData.name.minLength">Name must have atleast{{$v.formData.name.$params.minLength.min}} letters.</span>
+                        <span v-if="!$v.formData.name.maxLength">Name must be less than{{$v.formData.name.$params.maxLength.max}} letters.</span>
+                    </div>
+                </div>
+                <div class="form-group"> 
+                    <input  type="text" class="form-control" placeholder="Email"
+                    v-model.trim="$v.formData.email.$model"  @change="$v.email.$touch()"
+                    :class="{'is-invalid':$v.formData.email.$error,'is-valid':!$v.formData.email.$invalid}" />
+                    <div class="valid-feedback">Your email is valid</div>
+                    <div class="invalid-feedback">
+                        <span v-if="!$v.formData.email.required">Email is required.</span>
+                        <span v-if="!$v.formData.email.email">Invalid Email.</span>                        
+                    </div>
+                </div>
+               
+                <div class="form-group"><input type="text" class="form-control" placeholder="Mobile" v-model="formData.mobile" /></div>
+                <div class="form-group"><input  type="text" class="form-control" placeholder="Company Name" v-model="formData.company" /></div>
+                <div class="controls"> <textarea name="comments" class="form-control" placeholder="Message (Max Length 100)" maxlength="100" v-model="formData.message" ></textarea>
+                </div>
+           </form>
+        </div>       
+     
+      
             <vue-recaptcha class="captch" @verify="markRecaptchaAsVerified"
-            sitekey="6LeAn-AUAAAAALGWQ76zWJs6L459veVQCARfvl5v"></vue-recaptcha>
-              <div class="modal-footer">
-                  <div><strong>{{ loginForm.pleaseTickRecaptchaMessage }}</strong></div>
-                <button type="button" class="btn btn-blue" @click.prevent="checkIfRecaptchaVerified">Submit</button>
-                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-              </div>          
-        </div>
-        </div>
-      </div>
+                    sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></vue-recaptcha>
+                     </div>
+                    </div>
+     </div>
+    </div><!--card end-->
+            <div class="modal-footer">
+                <div><strong>{{ formData.pleaseTickRecaptchaMessage }}</strong></div>
+                <button type="button" class="btn btn-sm btn-primary" @click.prevent="checkIfRecaptchaVerified">Submit</button>
+                <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Close</button>
+            </div>          
     </div>
+</div></div>
 </template>
 <script>
 import VIC from './VIC1'
@@ -101,27 +88,44 @@ import QLD from './QLD'
 import SA from './SA'
 import ALL from './ALL'
 import VueRecaptcha from 'vue-recaptcha'
+import {required, minLength, maxLength, between, email} from 'vuelidate/lib/validators'
+
 export default {
     components: { ALL,VIC, TAS,  WA,  NSW, ACT, QLD, SA ,VueRecaptcha},
-     data(){ return {loginForm: {
-      recaptchaVerified: false,
-      pleaseTickRecaptchaMessage: ''
-    }  }},
-      methods: {
-    markRecaptchaAsVerified(response) {
-      this.loginForm.pleaseTickRecaptchaMessage = '';
-      this.loginForm.recaptchaVerified = true;
-      console.log('markRecaptchaAsVerified--res,lgfm',response,this.loginForm)
+     data(){ return {formData: {
+            recaptchaVerified: false,
+            pleaseTickRecaptchaMessage: '',
+            name:'', company:'', mobile:''
+                    }, name:''  }
+            },
+    validations:{
+        formData:{
+              name:{required, minLength:minLength(3),maxLength:maxLength(50)},
+              //company:{required, minLength:minLength(3),maxLength:maxLength(20)},
+              mobile:{required, between:between(9,10)},
+                  email:{required:validators.required,
+    	email:validators.email
+                  },
+        }
+      
     },
-    checkIfRecaptchaVerified() {
-      if (!this.loginForm.recaptchaVerified) {
-        this.loginForm.pleaseTickRecaptchaMessage = 'Please tick recaptcha.';
-        console.log('checkIfRecaptchaVerified-not verified, lgnform',this.loginForm)
-        return true; // prevent form from submitting
-      }
-      console.log('checkIfRecaptchaVerified, lgnform-verified',this.loginForm)
-      alert('form would be posted!');
-    }
+      methods: {
+    markRecaptchaAsVerified(response) 
+    {   this.formData.pleaseTickRecaptchaMessage = '';
+        this.formData.recaptchaVerified = true;
+        console.log('markRecaptchaAsVerified--res,lgfm',response,this.formData)
+    },
+    checkIfRecaptchaVerified() 
+    {  if (!this.formData.recaptchaVerified) 
+        {   this.formData.pleaseTickRecaptchaMessage = 'Please tick recaptcha.';
+            console.log('checkIfRecaptchaVerified-not verified, lgnform',this.formData)
+            return true; // prevent form from submitting
+        }
+        console.log('checkIfRecaptchaVerified, lgnform-verified',this.formData)
+        alert('form would be posted!');
+        this.resetFormData();
+    },
+    resetFormData() {  this.formData = { recaptchaVerified: false,  pleaseTickRecaptchaMessage: '',  comment: ''  }; }
   }
 }
 </script>
@@ -131,22 +135,34 @@ export default {
     overflow-y:scroll;
 }
 .fform{
-    padding:1rem 5rem .5rem;
+    padding:1rem 2rem .5rem;
     
 }
 img{
 display:inline-block;
 padding-top:12px;
 padding-left:12px;}
-.modal-title{
- 
-
-}
+.modal-title{}
 .selectsate{margin:0 auto;
 text-align:center
 }
-.captch{
+.captch{ 
     margin:0 auto;
-    padding-bottom:1rem
+    padding-bottom:1rem;
+  
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+textarea:focus::placeholder {
+  color: transparent;
+}
+
+.btn.btn-danger {
+  color: #fff;
+  background-color: #df4b4b;
+
+  outline: none;
 }
 </style>
