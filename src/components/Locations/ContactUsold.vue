@@ -103,8 +103,7 @@ export default {
               name:{required, minLength:minLength(3),maxLength:maxLength(50)},
               //company:{required, minLength:minLength(3),maxLength:maxLength(20)},
               mobile:{required, between:between(9,10)},
-                  email:{required:validators.required,
-    	email:validators.email
+                  email:{required,email
                   },
         }
       
