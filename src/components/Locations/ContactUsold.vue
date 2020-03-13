@@ -1,5 +1,6 @@
 <template>
-<div class="modal fade bannerformmodal" tabindex="-1" role="dialog" aria-labelledby="bannerformmodal" aria-hidden="true" id="bannerformmodal">
+<div class="modal fade bannerformmodal" tabindex="-1"  role="dialog" 
+aria-labelledby="bannerformmodal" aria-hidden="true" id="bannerformmodal">
 <div class="modal-dialog modal-lg">
     <div class="modal-content">
         <div class="modal-header">
@@ -83,14 +84,14 @@
      
       
             <vue-recaptcha class="captch" @verify="markRecaptchaAsVerified"
-                    sitekey="6LeAn-AUAAAAALGWQ76zWJs6L459veVQCARfvl5v"></vue-recaptcha>
+                    sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></vue-recaptcha>
                      </div>
                     </div>
      </div>
     </div><!--card end-->
             <div class="modal-footer">
                 <div><strong>{{ formData.pleaseTickRecaptchaMessage }}</strong></div>
-                <button type="button" class="btn btn-sm btn-primary" @click.prevent="checkIfRecaptchaVerified">Submit</button>
+                <button type="button" class="btn btn-sm btn-primary" @click.prevent="checkIfRecaptchaVerified()" >Submit</button>
                 <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Close</button>
             </div>          
     </div>
@@ -107,16 +108,18 @@ import SA from './SA'
 import ALL from './ALL'
 import VueRecaptcha from 'vue-recaptcha'
 import {required, minLength, maxLength, between, email, numeric} from 'vuelidate/lib/validators'
-import { helpers } from 'vuelidate/lib/validators'
- var phone = helpers.regex('phone', /^1(3|4|5|7|8)\d{9}$/);
+import axios from "axios";
+const $ = require('jquery')
+window.$ = $
+require('jquery-confirm')
 
 export default {
     components: { ALL,VIC, TAS,  WA,  NSW, ACT, QLD, SA ,VueRecaptcha},
      data(){ return {formData: {
             recaptchaVerified: false,
             pleaseTickRecaptchaMessage: '',
-            name:'', company:'', mobile:''
-                    }, name:''  }
+            name:'', company:'', mobile:'', message:''
+                    },   }
             },
     validations:{
         formData:{
@@ -132,8 +135,9 @@ export default {
                     this.formData.recaptchaVerified = true;
                     console.log('markRecaptchaAsVerified--res,lgfm',response,this.formData)
                 },
-                checkIfRecaptchaVerified() 
+                async checkIfRecaptchaVerified() 
                 {    this.$v.formData.$touch();
+               
                     console.log('validation ', this.$v.formData); 
                     if(this.$v.formData.name.$invalid || this.$v.formData.email.$invalid)
                     {
@@ -148,9 +152,13 @@ export default {
                                 return true; // prevent form from submitting
                             }
                             console.log('all ok',this.formData)
-                            alert('Message Sent!');
-                         //close the form
-                            this.resetFormData();
+                           // resp=axios.post('http://127.0.0.1:8000/sendemail1',this.formData); 
+                            let resp= await axios.post('https://uat.oms.dowell.com.au/api/sendemail1',this.formData);
+                             console.log('signin res=',resp);
+                             alert('Message Sent!');
+ 
+                             $('#bannerformmodal').modal('hide');
+                             return false;
 
                         }
 

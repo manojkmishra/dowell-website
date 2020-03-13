@@ -9,10 +9,12 @@
   "dependencies": {
     "@inotom/vue-go-top": "^1.1.0",
     "animate.css": "^3.7.2",
+    "axios": "^0.19.2",
     "bootstrap": "^4.3.1",
     "core-js": "^2.6.5",
     "dotenv": "^8.2.0",
     "jquery": "^3.4.1",
+    "jquery-confirm": "^3.3.4",
     "leaflet": "^1.6.0",
     "popper.js": "^1.15.0",
     "vue": "^2.6.10",
