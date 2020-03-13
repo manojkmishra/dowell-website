@@ -59,7 +59,21 @@
                     </div>
                 </div>
                
-                <div class="form-group"><input type="text" class="form-control" placeholder="Mobile" v-model="formData.mobile" /></div>
+                <div class="form-group"><input type="text" class="form-control" placeholder="Mobile" 
+                 v-model.trim="$v.formData.mobile.$model"
+                    :class="{'is-invalid':$v.formData.mobile.$error,'is-valid':!$v.formData.mobile.$invalid}" />
+                    <div class="valid-feedback">Your Phone is valid</div>
+                    <div class="invalid-feedback">                       
+                        <span v-if="!$v.formData.mobile.required">Phone/Mobile no is required.</span>
+                        <span v-if="!$v.formData.mobile.numeric">Must be numeric</span>
+                        <span v-if="$v.formData.mobile.numeric && !$v.formData.mobile.minLength"> Must have atleast {{$v.formData.mobile.$params.minLength.min}} digits.</span>
+                        <span v-if="$v.formData.mobile.numeric && !$v.formData.mobile.maxLength"> Must be less than {{$v.formData.mobile.$params.maxLength.max}} digits.</span>
+                        
+                      <!--  <span v-if="!$v.formData.mobile.phone">Must be phone</span>      -->                       
+                    </div>
+                    </div>
+               
+               
                 <div class="form-group"><input  type="text" class="form-control" placeholder="Company Name" v-model="formData.company" /></div>
                 <div class="controls"> <textarea name="comments" class="form-control" placeholder="Message (Max Length 100)" maxlength="100" v-model="formData.message" 
                   ></textarea>
@@ -69,7 +83,7 @@
      
       
             <vue-recaptcha class="captch" @verify="markRecaptchaAsVerified"
-                    sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></vue-recaptcha>
+                    sitekey="6LeAn-AUAAAAALGWQ76zWJs6L459veVQCARfvl5v"></vue-recaptcha>
                      </div>
                     </div>
      </div>
@@ -92,7 +106,9 @@ import QLD from './QLD'
 import SA from './SA'
 import ALL from './ALL'
 import VueRecaptcha from 'vue-recaptcha'
-import {required, minLength, maxLength, between, email} from 'vuelidate/lib/validators'
+import {required, minLength, maxLength, between, email, numeric} from 'vuelidate/lib/validators'
+import { helpers } from 'vuelidate/lib/validators'
+ var phone = helpers.regex('phone', /^1(3|4|5|7|8)\d{9}$/);
 
 export default {
     components: { ALL,VIC, TAS,  WA,  NSW, ACT, QLD, SA ,VueRecaptcha},
@@ -104,17 +120,14 @@ export default {
             },
     validations:{
         formData:{
-              name:{required, minLength:minLength(3),maxLength:maxLength(50)},
+            name:{required, minLength:minLength(3),maxLength:maxLength(50)},
               //company:{required, minLength:minLength(3),maxLength:maxLength(20)},
-              mobile:{required, between:between(9,10)},
-                  email:{required,email
-                  },
+            mobile:{required,numeric,minLength:minLength(9),maxLength:maxLength(10)    },
+            email:{required,email },
         }
-      
     },
-      methods: 
-      {
-                markRecaptchaAsVerified(response) 
+    methods: 
+    {   markRecaptchaAsVerified(response) 
                 {   this.formData.pleaseTickRecaptchaMessage = '';
                     this.formData.recaptchaVerified = true;
                     console.log('markRecaptchaAsVerified--res,lgfm',response,this.formData)
@@ -135,10 +148,12 @@ export default {
                                 return true; // prevent form from submitting
                             }
                             console.log('all ok',this.formData)
-                        }
-                         //alert('form would be posted!');
+                            alert('Message Sent!');
                          //close the form
-                         // this.resetFormData();
+                            this.resetFormData();
+
+                        }
+
                     
                 },
 
