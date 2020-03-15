@@ -156,7 +156,7 @@ export default {
                             let resp= await axios.post('https://uat.oms.dowell.com.au/api/sendemail1',this.formData);
                              console.log('signin res=',resp);
                              alert('Message Sent!');
- 
+                             this.resetFormData();
                              $('#bannerformmodal').modal('hide');
                              return false;
 
@@ -165,7 +165,9 @@ export default {
                     
                 },
 
-        resetFormData() {  this.formData = { recaptchaVerified: false,  pleaseTickRecaptchaMessage: '',  comment: ''  }; }
+        resetFormData() {  this.formData = {  recaptchaVerified: false,
+            pleaseTickRecaptchaMessage: '',
+            name:'', company:'', mobile:'', message:'' }; }
     },
    
 
