@@ -1,7 +1,12 @@
 <template>
 <div class="about container animated fadeIn">
 <h1 class="blue animated fadeInLeft text-center">Our Locations</h1>
-   <div class="row map">
+    <div class="row">
+        <div class="col-xl-12 col-md-12">
+            <img class="card-img-top rounded-0" src="../assets/images/Locations/photo1.jpg" alt="Dowell Windows and Doors Locations">
+        </div>
+    </div>
+  <!-- <div class="row map">
             <l-map :zoom="zoom" :center="center">
       <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
         <l-marker :key="index" v-for="(brew,index) in brews"
@@ -29,7 +34,7 @@
          
 
     </l-map>
-    </div>
+    </div>  -->
 
     <div class="row mt-3">
         <div class="col-md-12">
