@@ -1,6 +1,6 @@
 <template>
 <div class="about container animated fadeIn">
-<h1 class="blue animated fadeInLeft text-center">Our Locations</h1>
+<h1 class="blue animated text-center">Our Locations</h1>
     <div class="row">
         <div class="col-xl-12 col-md-12">
             <img class="card-img-top rounded-0" src="../assets/images/Locations/photo1.jpg" alt="Dowell Windows and Doors Locations">

@@ -17,9 +17,9 @@
             </div>
         </div>
     </div> -->
-        <h1 class="story blue animated fadeInLeft text-center">Story of Dowell - a company history</h1>
+        <h1 class="story blue text-center">Story of Dowell - a company history</h1>
         <div class="row">
-            <div class="animated fadeInLeft col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <img id="window-image1" src="../assets/images/About/Page-2-Image-2.png" alt="Dowell Windows and Doors">
             </div>
         </div>

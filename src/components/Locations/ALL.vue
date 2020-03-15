@@ -2,7 +2,7 @@
 <div class="tab-pane active" id="all">
     <div class="row ml-1 state"><h3>Victoria</h3></div>
     <div class="row">
-        <div class="col-xl-3 col-md-6 col-s-12 offset-xl-1 animated fadeInRight" :key="index" v-for="(brew,index) in vic">
+        <div class="col-xl-3 col-md-6 col-s-12 offset-xl-1" :key="index" v-for="(brew,index) in vic">
             <div class="table-responsive">                 
                 <table class="table-borderless">                 
                     <thead class="officename"><tr><th>{{brew.name}}</th></tr></thead>
