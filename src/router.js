@@ -11,12 +11,7 @@ export default new Router({
     //--------------------------------//
     //---------- Main Menu -----------//
     //--------------------------------//
-    //Home 
-    {
-      path: "/",
-      name: "home",
-      component: Home
-    },
+
     //Product-Pages 
     {
       path: "/products",
@@ -253,6 +248,12 @@ export default new Router({
       component: () =>
         import("./views/Thermaline-Pages/Climate.vue")
     },
+        //Home 
+        {
+          path: "/",
+          name: "home",
+          component: Home
+        },
 
   ],
   scrollBehavior (to, from, savedPosition) {
